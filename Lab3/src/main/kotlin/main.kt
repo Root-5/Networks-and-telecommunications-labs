@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     }
     val port = Integer.parseInt(args[2])
     when (args.size) {
-        3 -> Node(name, lossPercent, port)
-        5 -> Node(name, lossPercent, port, InetAddress.getByName(args[3]), Integer.parseInt(args[4]))
+        3 -> Node(name, lossPercent, port).start()
+        5 -> Node(name, lossPercent, port, InetAddress.getByName(args[3]), Integer.parseInt(args[4])).start()
     }
 }
