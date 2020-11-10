@@ -1,4 +1,4 @@
-import Node.Node
+import node.Node
 import java.net.InetAddress
 import kotlin.system.exitProcess
 
