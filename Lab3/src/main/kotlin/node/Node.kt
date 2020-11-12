@@ -31,7 +31,7 @@ class Node(private var parent: InetSocketAddress, private val port: Int, private
     private var parentReplacer: InetSocketAddress? = null
 
     private val random = Random()
-    private val thread: Thread? = null
+    private var thread: Thread? = null
 
     private val forDebug: Boolean = true
 
@@ -41,6 +41,9 @@ class Node(private var parent: InetSocketAddress, private val port: Int, private
         queues.add(ConcurrentLinkedQueue<Message>())
         queues.add(ConcurrentLinkedQueue<Message>())
         queues.add(ConcurrentLinkedQueue<Message>())
+        thread = Thread(this)
+        thread!!.start()
+
     }
 
     private fun destroyNeighbours() {
@@ -120,7 +123,7 @@ class Node(private var parent: InetSocketAddress, private val port: Int, private
             destroyNeighbours()
 
             val currentTime = System.currentTimeMillis()
-            val timeToExitFromIteration = currentTime + 3000
+            val timeToExitFromIteration = currentTime + 30000
             for ((i, queue) in queues.withIndex()) {
                 while (queue.isNotEmpty()) {
                     if (System.currentTimeMillis() >= timeToExitFromIteration) break
@@ -152,8 +155,10 @@ class Node(private var parent: InetSocketAddress, private val port: Int, private
             }
             println("AUF")
             while (System.currentTimeMillis() < timeToExitFromIteration) {
+                datagramChannel.socket().soTimeout = 100000
                 val datagramPacket = DatagramPacket(ByteArray(10000), ByteArray(10000).size)
                 datagramChannel.socket().receive(datagramPacket)
+                println(datagramPacket.data)
                 if (random.nextInt(100) < lossPercent) continue
                 val from = datagramPacket.address as InetSocketAddress
                 messageBuffer.limit(datagramPacket.length)
