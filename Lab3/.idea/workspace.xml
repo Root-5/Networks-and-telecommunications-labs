@@ -23,6 +23,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/Node.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/Node.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/threads/Receiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Receiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/threads/Sender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Sender.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Packet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Packet.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,38 +148,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1605209046493" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1605254428701">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1605257638255">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605254428701" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1605254428701">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605257638255" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1605257638255">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605254428701" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1605254428701">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605257638255" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1605257638255">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605254428701" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1605254428701">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605257638255" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1605257638255">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605254428701" />
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1605206969371">
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605257638255" />
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1605256493730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605206969371" />
-    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1605206969371">
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605256493730" />
+    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1605256493729">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1605206969371" />
-    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1605206969370">
+    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1605256493729" />
+    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1605256493729">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1605206969370" />
-    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1605206969371">
+    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1605256493729" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1605256493729">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1605206969371" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1605256493729" />
     <state x="315" y="153" width="905" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605211489589">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -188,13 +190,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/node/Node.kt</url>
-          <line>54</line>
+          <line>58</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/node/Node.kt</url>
-          <line>51</line>
+          <line>55</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/node/threads/Sender.kt</url>
+          <line>21</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/node/threads/Sender.kt</url>
+          <line>22</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/node/threads/Sender.kt</url>
+          <line>25</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/node/threads/Sender.kt</url>
+          <line>26</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/node/threads/Sender.kt</url>
+          <line>27</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />

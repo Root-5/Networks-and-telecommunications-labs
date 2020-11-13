@@ -1,6 +1,8 @@
 package node.threads
 
 import utils.Connection
+import utils.Packet
+import utils.PacketType
 import java.net.DatagramPacket
 import java.net.InetAddress
 import java.nio.channels.DatagramChannel
@@ -17,18 +19,21 @@ class Sender(
     override fun run() {
         //Просто бесконечно читаем из потока ввода, а затем отправляем всем детям и родителю сообщения.
         //Иногда отправляет сообщения, которые пришли от узлов дальше по дереву
+        if (parent != null) {
+            sendHelloMessage()
+        }
         val scanner = Scanner(System.`in`)
         while (true) {
             val rawMessage = scanner.nextLine()
             for (child in childs) {
-                val message = addAddressToPacket(rawMessage)
+                val message = addInfoInPacket(rawMessage, PacketType.DEFAULT_PACKET)
                 val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
                 datagramPacket.address = child.inetAddress
                 datagramPacket.port = child.port
                 datagramChannel.socket().send(datagramPacket)
             }
             if (parent != null) {
-                val message = addAddressToPacket(rawMessage)
+                val message = addInfoInPacket(rawMessage, PacketType.DEFAULT_PACKET)
                 val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
                 datagramPacket.address = parent.inetAddress
                 datagramPacket.port = parent.port
@@ -37,9 +42,20 @@ class Sender(
         }
     }
 
-    //Функция для вшивания в каждый наш датаграмм пакет адреса отправителя
-    private fun addAddressToPacket(message: String): String {
-        return nodeIP.toString() + '\n' + port + '\n' + message
+    private fun sendHelloMessage() {
+        val rawMessage = "Hello from your child!"
+        val message = addInfoInPacket(rawMessage, PacketType.HELLO_PACKET)
+        val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
+        datagramPacket.address = parent!!.inetAddress
+        datagramPacket.port = parent.port
+        datagramChannel.socket().send(datagramPacket)
+    }
+
+    //Функция для вшивания в каждый наш датаграмм пакет данных: Данные отправителя, тип сообщения, его uuid и само сообщение
+    private fun addInfoInPacket(message: String, packetType: Byte): String {
+        //Сначала будет следовать тип сообщения, затем его UUID, после ip и port отправителя, а далее само сообщение
+        val uuid = UUID.randomUUID()
+        return packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + message
     }
 
 }

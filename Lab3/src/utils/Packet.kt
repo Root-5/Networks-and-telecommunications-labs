@@ -1,10 +1,26 @@
 package utils
 
 import java.net.InetAddress
+import java.util.*
 
-class Packet(private val inetAddress: InetAddress, private val port: Int, private val message: String) {
+class Packet(
+    private val packetType: Byte,
+    private val uuid: UUID,
+    private val inetAddress: InetAddress,
+    private val port: Int,
+    private val message: String
+) {
 
     /** Get methods **/
+
+    fun getPacketType(): Byte {
+        return packetType
+    }
+
+    fun getUUID(): UUID {
+        return uuid
+    }
+
     fun getInetAddress(): InetAddress {
         return inetAddress
     }
@@ -18,6 +34,6 @@ class Packet(private val inetAddress: InetAddress, private val port: Int, privat
     }
 
     fun getPacket(): String {
-        return inetAddress.toString() + '\n' + port.toString() + '\n' + message
+        return packetType.toString() + '\n' + uuid.toString() + '\n' + inetAddress.toString() + '\n' + port.toString() + '\n' + message
     }
 }
