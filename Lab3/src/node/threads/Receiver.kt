@@ -33,6 +33,7 @@ class Receiver(
         var ip = ""
         var port = ""
         var mes = ""
+        val redunantBackSlash = iter.nextChar()                     //Там в айпишнике лишний слэш в начале
         while (iter.hasNext()) {
             val char = iter.nextChar()
             if (char == '\n') break

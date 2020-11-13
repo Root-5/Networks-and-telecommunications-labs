@@ -42,6 +42,7 @@ class Node(private val name: String, private val port: Int, private val lossPerc
         datagramChannel.bind(InetSocketAddress(port))
         datagramChannel.socket().soTimeout = 10000000
 
+        //if(nodeType = NodeType.ROOT)
         parent = Connection(InetAddress.getLocalHost(), 1000)
 
         //childs.add(Connection(InetAddress.getLocalHost(), 1001))
