@@ -26,7 +26,7 @@ class Receiver(
             val datagramPacket = DatagramPacket(ByteArray(1000), 1000)
             datagramChannel.socket().receive(datagramPacket)
             val message = getInfoFromPacket(datagramPacket)
-            if (message.getPacketType() != PacketType.HELLO_PACKET) received.add(getInfoFromPacket(datagramPacket))
+            if (message.getPacketType() == PacketType.DEFAULT_PACKET) received.add(getInfoFromPacket(datagramPacket))
             val sender = Connection(message.getInetAddress(), message.getPort())
             checkConnectionInChilds(sender, message.getAlterNode())
             println("What i received: ${message.getMessage()}")

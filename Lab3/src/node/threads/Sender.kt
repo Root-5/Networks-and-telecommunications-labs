@@ -1,7 +1,6 @@
 package node.threads
 
 import utils.Connection
-import utils.Packet
 import utils.PacketType
 import java.net.DatagramPacket
 import java.net.InetAddress
@@ -17,6 +16,8 @@ class Sender(
     private val parent: Connection?,
     private val alterNode: Connection?
 ) : Runnable {
+    private var senderTestPackets: Thread? = null
+
     override fun run() {
         //Просто бесконечно читаем из потока ввода, а затем отправляем всем детям и родителю сообщения.
         //Иногда отправляет сообщения, которые пришли от узлов дальше по дереву
@@ -24,6 +25,8 @@ class Sender(
             sendHelloMessage()
         }
         val scanner = Scanner(System.`in`)
+        senderTestPackets = Thread(SenderTestPackets(childs, parent, datagramChannel, nodeIP, port, alterNode))
+        senderTestPackets!!.start()
         while (true) {
             val rawMessage = scanner.nextLine()
             for (child in childs) {
@@ -37,7 +40,7 @@ class Sender(
                 val message = addInfoInPacket(rawMessage, PacketType.DEFAULT_PACKET)
                 val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
                 datagramPacket.address = parent.inetAddress
-                datagramPacket.port = parent.port
+                 datagramPacket.port = parent.port
                 datagramChannel.socket().send(datagramPacket)
             }
         }
@@ -61,7 +64,6 @@ class Sender(
         } else {
             packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + alterNode.inetAddress + '\n' + alterNode.port + '\n' + message
         }
-
     }
 
 }
