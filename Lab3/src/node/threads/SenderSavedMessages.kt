@@ -11,29 +11,28 @@ class SenderSavedMessages(
     private val nodeIP: InetAddress,
     private val port: Int,
     private val datagramChannel: DatagramChannel,
-    private val childs: ConcurrentLinkedQueue<Connection>,
+    private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
     private val parent: Connection?,
-    private val messagesToSend: ConcurrentLinkedQueue<Packet>
+    private val messagesToSend: ConcurrentLinkedQueue<Packet>,
+    private val alterNode: Connection?
 ) : Runnable {
 
-    //Если есть, что отправть, то проходимся по всем сообщениям, отправляем каждое детям и родителю (Да, я знаю, что надо переделать так, чтобы отправителю пакет назад не доставлялся)
+    //Если есть, что отправить, то проходимся по всем сообщениям, отправляем каждое детям и родителю
     override fun run() {
         while (true) {
             if (messagesToSend.size != 0) {
                 for (packet in messagesToSend) {
                     for (child in childs) {
-                        if (child.inetAddress == packet.getInetAddress() && child.port == packet.getPort()) continue
-                        val rawMessage = packet.getMessage()
-                        val message = addAddressToPacket(rawMessage)
+                        if (child.first.inetAddress == packet.getInetAddress() && child.first.port == packet.getPort()) continue
+                        val message = addInfoToPacket(packet)
                         val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
-                        datagramPacket.address = child.inetAddress
-                        datagramPacket.port = child.port
+                        datagramPacket.address = child.first.inetAddress
+                        datagramPacket.port = child.first.port
                         datagramChannel.socket().send(datagramPacket)
                     }
                     if (parent != null) {
                         if (parent.inetAddress == packet.getInetAddress() && parent.port == packet.getPort()) continue
-                        val rawMessage = packet.getMessage()
-                        val message = addAddressToPacket(rawMessage)
+                        val message = addInfoToPacket(packet)
                         val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
                         datagramPacket.address = parent.inetAddress
                         datagramPacket.port = parent.port
@@ -46,8 +45,9 @@ class SenderSavedMessages(
     }
 
     //Функция для вшивания в каждый наш датаграмм пакет адреса отправителя
-    private fun addAddressToPacket(message: String): String {
-        return nodeIP.toString() + '\n' + port + '\n' + message
+    private fun addInfoToPacket(packet: Packet): String {
+        return packet.getPacketType().toString() + '\n' + packet.getUUID()
+            .toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + packet.getAlterNode().inetAddress.toString() + '\n' + packet.getAlterNode().port.toString() + '\n' + packet.getMessage()
     }
 
 }

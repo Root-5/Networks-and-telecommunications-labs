@@ -13,8 +13,9 @@ class Sender(
     private val nodeIP: InetAddress,
     private val port: Int,
     private val datagramChannel: DatagramChannel,
-    private val childs: ConcurrentLinkedQueue<Connection>,
-    private val parent: Connection?
+    private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
+    private val parent: Connection?,
+    private val alterNode: Connection?
 ) : Runnable {
     override fun run() {
         //Просто бесконечно читаем из потока ввода, а затем отправляем всем детям и родителю сообщения.
@@ -28,8 +29,8 @@ class Sender(
             for (child in childs) {
                 val message = addInfoInPacket(rawMessage, PacketType.DEFAULT_PACKET)
                 val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
-                datagramPacket.address = child.inetAddress
-                datagramPacket.port = child.port
+                datagramPacket.address = child.first.inetAddress
+                datagramPacket.port = child.first.port
                 datagramChannel.socket().send(datagramPacket)
             }
             if (parent != null) {
@@ -53,9 +54,14 @@ class Sender(
 
     //Функция для вшивания в каждый наш датаграмм пакет данных: Данные отправителя, тип сообщения, его uuid и само сообщение
     private fun addInfoInPacket(message: String, packetType: Byte): String {
-        //Сначала будет следовать тип сообщения, затем его UUID, после ip и port отправителя, а далее само сообщение
+        //Сначала будет следовать тип сообщения, затем его UUID, после ip и port отправителя, ip и port альтернативной ноды, а далее само сообщение
         val uuid = UUID.randomUUID()
-        return packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + message
+        return if (alterNode == null) {
+            "$packetType\n$uuid\n$nodeIP\n$port\n0\n0\n$message"
+        } else {
+            packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + alterNode.inetAddress + '\n' + alterNode.port + '\n' + message
+        }
+
     }
 
 }

@@ -8,10 +8,15 @@ class Packet(
     private val uuid: UUID,
     private val inetAddress: InetAddress,
     private val port: Int,
+    private val alterNode: Connection,
     private val message: String
 ) {
 
     /** Get methods **/
+
+    fun getAlterNode() : Connection{
+        return alterNode
+    }
 
     fun getPacketType(): Byte {
         return packetType
@@ -31,9 +36,5 @@ class Packet(
 
     fun getMessage(): String {
         return message
-    }
-
-    fun getPacket(): String {
-        return packetType.toString() + '\n' + uuid.toString() + '\n' + inetAddress.toString() + '\n' + port.toString() + '\n' + message
     }
 }

@@ -23,9 +23,18 @@ class Node(private val name: String, private val port: Int, private val lossPerc
     private var receiver: Thread? = null
     private var sender: Thread? = null
     private var senderReceivedMessages: Thread? = null
+
+    //Коллекции для хранения полученных пакетов и подключенных к этому узлу узлов
     private val receivedPackages = ConcurrentLinkedQueue<Packet>()
-    private val childs = ConcurrentLinkedQueue<Connection>()
+    private val childs = ConcurrentLinkedQueue<Pair<Connection, Connection?>>()
+    //private val childsWithAlterNode =
+    //    ConcurrentLinkedQueue<Pair<Connection, Connection>>()         //1 - сам ребенок, 2 - его заместитель
+
+    //Тут храним адрес родителя этой ноды
     private var parent: Connection? = null
+
+    //Храним данные о заместителе ноды
+    private var alternateNode: Connection? = null
 
     constructor(name: String, port: Int, lossPercentage: Int, ipToConnect: InetAddress, portToConnect: Int) : this(
         name,
@@ -41,48 +50,22 @@ class Node(private val name: String, private val port: Int, private val lossPerc
         /** set datagram channel settings **/
         datagramChannel.bind(InetSocketAddress(port))
         datagramChannel.socket().soTimeout = 10000000
-        if (nodeType == NodeType.DEFAULT) {             //Если ipToConnect и portToConnect не нулевые, выполнится лямбда
+        if (nodeType == NodeType.DEFAULT) {             //Если ipToConnect и portToConnect не нулевые, добавим родителя узла
             parent = portToConnect?.let {
-                ipToConnect?.let { it1 ->
-                    Connection(
-                        it1,
-                        it
-                    )
-                }
+                ipToConnect?.let { it1 -> Connection(it1, it) }
             }
+            alternateNode = parent
         }
 
-        receiver = Thread(Receiver(datagramChannel, port, receivedPackages, childs))
+        receiver = Thread(Receiver(nodeIP, datagramChannel, port, receivedPackages, childs, alternateNode, parent))
         receiver!!.start()
 
-        sender = Thread(Sender(nodeIP, port, datagramChannel, childs, parent))
+        sender = Thread(Sender(nodeIP, port, datagramChannel, childs, parent, alternateNode))
         sender!!.start()
 
         senderReceivedMessages =
-            Thread(SenderSavedMessages(nodeIP, port, datagramChannel, childs, parent, receivedPackages))
+            Thread(SenderSavedMessages(nodeIP, port, datagramChannel, childs, parent, receivedPackages, alternateNode))
         senderReceivedMessages!!.start()
 
     }
-    /*fun startToSend(port: Int) {
-        datagramChannel.bind(InetSocketAddress(port))
-        datagramChannel.socket().soTimeout = 1000
-        val scanner = Scanner(System.`in`)
-        datagramChannel.socket().connect(InetAddress.getLocalHost(), 1001)
-        while (true) {
-            val message = scanner.nextLine()
-            datagramChannel.socket().send(DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length))
-            println("Message sent")
-        }
-    }
-
-    fun startToReceive(port: Int) {
-        datagramChannel.bind(InetSocketAddress(port))
-        datagramChannel.socket().soTimeout = 100000
-        while (true) {
-            val buffer = ByteArray(1000)
-            datagramChannel.socket().receive(DatagramPacket(buffer, 1000))
-            val message = String(buffer, charset("UTF-8"))
-            println("What i received: $message")
-        }
-    }*/
 }
