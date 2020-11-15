@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1ce4c9-8c45-407a-a1a2-903897a91c8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/Node.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/Node.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/Receiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Receiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/Sender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Sender.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/SenderSavedMessages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/SenderSavedMessages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Connection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Connection.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Packet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Packet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/PacketType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PacketType.kt" afterDir="false" />
-    </list>
+    <list default="true" id="ea1ce4c9-8c45-407a-a1a2-903897a91c8a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +51,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Kotlin.AppKt3">
+  <component name="RunManager" selected="Kotlin.AppKt1">
     <configuration name="AppKt1" type="JetRunConfigurationType" singleton="false" temporary="true">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
