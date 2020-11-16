@@ -26,6 +26,7 @@ class Node(private val name: String, private val port: Int, private val lossPerc
 
     //Коллекции для хранения полученных пакетов и подключенных к этому узлу узлов
     private val receivedPackages = ConcurrentLinkedQueue<Packet>()
+    private val receivedTestPackets = ConcurrentLinkedQueue<Packet>()
     private val childs = ConcurrentLinkedQueue<Pair<Connection, Connection?>>()
     //private val childsWithAlterNode =
     //    ConcurrentLinkedQueue<Pair<Connection, Connection>>()         //1 - сам ребенок, 2 - его заместитель
@@ -37,9 +38,9 @@ class Node(private val name: String, private val port: Int, private val lossPerc
     private var alternateNode: Connection? = null
 
     constructor(name: String, port: Int, lossPercentage: Int, ipToConnect: InetAddress, portToConnect: Int) : this(
-        name,
-        port,
-        lossPercentage
+            name,
+            port,
+            lossPercentage
     ) {
         this.ipToConnect = ipToConnect
         this.portToConnect = portToConnect
@@ -54,17 +55,17 @@ class Node(private val name: String, private val port: Int, private val lossPerc
             parent = portToConnect?.let {
                 ipToConnect?.let { it1 -> Connection(it1, it) }
             }
-            alternateNode = parent
+            alternateNode = null
         }
 
-        receiver = Thread(Receiver(nodeIP, datagramChannel, port, receivedPackages, childs, alternateNode, parent))
+        receiver = Thread(Receiver(nodeIP, datagramChannel, port, receivedPackages, childs, alternateNode, receivedTestPackets, parent))
         receiver!!.start()
 
         sender = Thread(Sender(nodeIP, port, datagramChannel, childs, parent, alternateNode))
         sender!!.start()
 
         senderReceivedMessages =
-            Thread(SenderSavedMessages(nodeIP, port, datagramChannel, childs, parent, receivedPackages, alternateNode))
+                Thread(SenderSavedMessages(nodeIP, port, datagramChannel, childs, parent, receivedPackages, alternateNode))
         senderReceivedMessages!!.start()
 
     }

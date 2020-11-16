@@ -9,12 +9,12 @@ import java.util.*
 import java.util.concurrent.ConcurrentLinkedQueue
 
 class Sender(
-    private val nodeIP: InetAddress,
-    private val port: Int,
-    private val datagramChannel: DatagramChannel,
-    private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
-    private val parent: Connection?,
-    private val alterNode: Connection?
+        private val nodeIP: InetAddress,
+        private val port: Int,
+        private val datagramChannel: DatagramChannel,
+        private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
+        private val parent: Connection?,
+        private val alterNode: Connection?
 ) : Runnable {
     private var senderTestPackets: Thread? = null
 
@@ -40,7 +40,7 @@ class Sender(
                 val message = addInfoInPacket(rawMessage, PacketType.DEFAULT_PACKET)
                 val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
                 datagramPacket.address = parent.inetAddress
-                 datagramPacket.port = parent.port
+                datagramPacket.port = parent.port
                 datagramChannel.socket().send(datagramPacket)
             }
         }
@@ -62,7 +62,7 @@ class Sender(
         return if (alterNode == null) {
             "$packetType\n$uuid\n$nodeIP\n$port\n0\n0\n$message"
         } else {
-            packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + alterNode.inetAddress + '\n' + alterNode.port + '\n' + message
+            packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + alterNode.inetAddress + '\n' + alterNode.port + '\n' + System.currentTimeMillis().toString() + '\n' + message
         }
     }
 

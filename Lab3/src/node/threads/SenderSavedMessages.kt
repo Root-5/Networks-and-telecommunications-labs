@@ -8,13 +8,13 @@ import java.nio.channels.DatagramChannel
 import java.util.concurrent.ConcurrentLinkedQueue
 
 class SenderSavedMessages(
-    private val nodeIP: InetAddress,
-    private val port: Int,
-    private val datagramChannel: DatagramChannel,
-    private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
-    private val parent: Connection?,
-    private val messagesToSend: ConcurrentLinkedQueue<Packet>,
-    private val alterNode: Connection?
+        private val nodeIP: InetAddress,
+        private val port: Int,
+        private val datagramChannel: DatagramChannel,
+        private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
+        private val parent: Connection?,
+        private val messagesToSend: ConcurrentLinkedQueue<Packet>,
+        private val alterNode: Connection?
 ) : Runnable {
 
     //Если есть, что отправить, то проходимся по всем сообщениям, отправляем каждое детям и родителю
@@ -47,7 +47,7 @@ class SenderSavedMessages(
     //Функция для вшивания в каждый наш датаграмм пакет адреса отправителя
     private fun addInfoToPacket(packet: Packet): String {
         return packet.getPacketType().toString() + '\n' + packet.getUUID()
-            .toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + packet.getAlterNode().inetAddress.toString() + '\n' + packet.getAlterNode().port.toString() + '\n' + packet.getMessage()
+                .toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + packet.getAlterNode().inetAddress.toString() + '\n' + packet.getAlterNode().port.toString() + '\n' + System.currentTimeMillis().toString() + '\n' + packet.getMessage()
     }
 
 }

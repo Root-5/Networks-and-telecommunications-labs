@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea1ce4c9-8c45-407a-a1a2-903897a91c8a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/Node.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/Node.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/threads/Receiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Receiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/threads/Sender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Sender.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Packet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Packet.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,22 +208,22 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>20</line>
+          <line>21</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>

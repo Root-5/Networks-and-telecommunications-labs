@@ -4,17 +4,18 @@ import java.net.InetAddress
 import java.util.*
 
 class Packet(
-    private val packetType: Byte,
-    private val uuid: UUID,
-    private val inetAddress: InetAddress,
-    private val port: Int,
-    private val alterNode: Connection,
-    private val message: String
+        private val packetType: Byte,
+        private val uuid: UUID,
+        private val inetAddress: InetAddress,
+        private val port: Int,
+        private val alterNode: Connection,
+        private val time: Long,
+        private val message: String
 ) {
 
     /** Get methods **/
 
-    fun getAlterNode() : Connection{
+    fun getAlterNode(): Connection {
         return alterNode
     }
 
@@ -32,6 +33,10 @@ class Packet(
 
     fun getPort(): Int {
         return port
+    }
+
+    fun getTime(): Long {
+        return time
     }
 
     fun getMessage(): String {

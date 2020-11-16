@@ -10,13 +10,14 @@ import java.util.*
 import java.util.concurrent.ConcurrentLinkedQueue
 
 class Receiver(
-    private val ip:InetAddress,
-    private val datagramChannel: DatagramChannel,
-    private val port: Int,
-    private val received: ConcurrentLinkedQueue<Packet>,
-    private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
-    private val alterNode: Connection?,
-    private val parent: Connection?
+        private val ip: InetAddress,
+        private val datagramChannel: DatagramChannel,
+        private val port: Int,
+        private val received: ConcurrentLinkedQueue<Packet>,
+        private val childs: ConcurrentLinkedQueue<Pair<Connection, Connection?>>,
+        private val alterNode: Connection?,
+        private val receivedTestPackets: ConcurrentLinkedQueue<Packet>,
+        private val parent: Connection?
 ) : Runnable {
     //Получаем датаграмм пакет, проверяем есть ли отправитель пакета в детях.
     //Если нет, то добавляем его в childs
@@ -27,6 +28,7 @@ class Receiver(
             datagramChannel.socket().receive(datagramPacket)
             val message = getInfoFromPacket(datagramPacket)
             if (message.getPacketType() == PacketType.DEFAULT_PACKET) received.add(getInfoFromPacket(datagramPacket))
+            if (message.getPacketType() == PacketType.TEST_PACKET) receivedTestPackets.add(getInfoFromPacket(datagramPacket))
             val sender = Connection(message.getInetAddress(), message.getPort())
             checkConnectionInChilds(sender, message.getAlterNode())
             println("What i received: ${message.getMessage()}")
@@ -42,7 +44,7 @@ class Receiver(
                 break
             }
         }
-        if(parent != null && parent.inetAddress == connection.inetAddress && parent.port == connection.port) {
+        if (parent != null && parent.inetAddress == connection.inetAddress && parent.port == connection.port) {
             haveChild = true
         }
         if (!haveChild) {
@@ -89,7 +91,7 @@ class Receiver(
         while (iterator.hasNext()) {
             val char = iterator.nextChar()
             if (char == '\n') break
-            if(char == '/') continue
+            if (char == '/') continue
             alterNodeIp += char
         }
         while (iterator.hasNext()) {
@@ -99,29 +101,36 @@ class Receiver(
         }
         while (iterator.hasNext()) {
             val char = iterator.nextChar()
+            if (char == '\n') break
+            time += char
+        }
+        while (iterator.hasNext()) {
+            val char = iterator.nextChar()
             mes += char
         }
         val result: Packet
         //Если у нас нет альтернативной ноды, то пихаем нулл
         if (alterNodeIp == "0") {
             result = Packet(
-                Integer.parseInt(packetType).toByte(),
-                UUID.fromString(uuid),
-                InetAddress.getByName(ip),
-                Integer.parseInt(port),
-                Connection(null, 0),
-                mes
+                    Integer.parseInt(packetType).toByte(),
+                    UUID.fromString(uuid),
+                    InetAddress.getByName(ip),
+                    Integer.parseInt(port),
+                    Connection(null, 0),
+                    time.toLong(),
+                    mes
             )
         }
         //Если есть, то извлекаем айпи и адрес альернативной ноды
         else {
             result = Packet(
-                Integer.parseInt(packetType).toByte(),
-                UUID.fromString(uuid),
-                InetAddress.getByName(ip),
-                Integer.parseInt(port),
-                Connection(InetAddress.getByName(alterNodeIp), Integer.parseInt(alterNodePort)),
-                mes
+                    Integer.parseInt(packetType).toByte(),
+                    UUID.fromString(uuid),
+                    InetAddress.getByName(ip),
+                    Integer.parseInt(port),
+                    Connection(InetAddress.getByName(alterNodeIp), Integer.parseInt(alterNodePort)),
+                    time.toLong(),
+                    mes
             )
         }
         return result
