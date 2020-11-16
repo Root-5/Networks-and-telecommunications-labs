@@ -62,6 +62,7 @@ class Receiver(
         var uuid = ""
         var ip = ""
         var port = ""
+        var time = ""
         var mes = ""
 
         while (iterator.hasNext()) {
