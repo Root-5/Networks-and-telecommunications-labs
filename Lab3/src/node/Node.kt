@@ -1,6 +1,7 @@
 package node
 
 import node.threads.Receiver
+import node.threads.Restructer
 import node.threads.Sender
 import node.threads.SenderSavedMessages
 import utils.Connection
@@ -23,13 +24,12 @@ class Node(private val name: String, private val port: Int, private val lossPerc
     private var receiver: Thread? = null
     private var sender: Thread? = null
     private var senderReceivedMessages: Thread? = null
+    private var restructer: Thread? = null
 
     //Коллекции для хранения полученных пакетов и подключенных к этому узлу узлов
     private val receivedPackages = ConcurrentLinkedQueue<Packet>()
     private val receivedTestPackets = ConcurrentLinkedQueue<Packet>()
-    private val childs = ConcurrentLinkedQueue<Pair<Connection, Connection?>>()
-    //private val childsWithAlterNode =
-    //    ConcurrentLinkedQueue<Pair<Connection, Connection>>()         //1 - сам ребенок, 2 - его заместитель
+    private val childs = ConcurrentLinkedQueue<Pair<Connection, Connection?>>()                             //1 - сам ребенок, 2 - его заместитель
 
     //Тут храним адрес родителя этой ноды
     private var parent: Connection? = null
@@ -67,6 +67,9 @@ class Node(private val name: String, private val port: Int, private val lossPerc
         senderReceivedMessages =
                 Thread(SenderSavedMessages(nodeIP, port, datagramChannel, childs, parent, receivedPackages, alternateNode))
         senderReceivedMessages!!.start()
+
+        //restructer = Thread(Restructer(receivedTestPackets, childs, parent))
+        //restructer!!.start()
 
     }
 }

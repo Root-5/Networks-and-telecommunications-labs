@@ -22,13 +22,15 @@ class SenderSavedMessages(
         while (true) {
             if (messagesToSend.size != 0) {
                 for (packet in messagesToSend) {
-                    for (child in childs) {
-                        if (child.first.inetAddress == packet.getInetAddress() && child.first.port == packet.getPort()) continue
-                        val message = addInfoToPacket(packet)
-                        val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
-                        datagramPacket.address = child.first.inetAddress
-                        datagramPacket.port = child.first.port
-                        datagramChannel.socket().send(datagramPacket)
+                    if(childs.isNotEmpty()) {
+                        for (child in childs) {
+                            if (child.first.inetAddress == packet.getInetAddress() && child.first.port == packet.getPort()) continue
+                            val message = addInfoToPacket(packet)
+                            val datagramPacket = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
+                            datagramPacket.address = child.first.inetAddress
+                            datagramPacket.port = child.first.port
+                            datagramChannel.socket().send(datagramPacket)
+                        }
                     }
                     if (parent != null) {
                         if (parent.inetAddress == packet.getInetAddress() && parent.port == packet.getPort()) continue

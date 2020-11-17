@@ -60,7 +60,7 @@ class Sender(
         //Сначала будет следовать тип сообщения, затем его UUID, после ip и port отправителя, ip и port альтернативной ноды, а далее само сообщение
         val uuid = UUID.randomUUID()
         return if (alterNode == null) {
-            "$packetType\n$uuid\n$nodeIP\n$port\n0\n0\n$message"
+            "$packetType\n$uuid\n$nodeIP\n$port\n0\n0\n${System.currentTimeMillis()}\n$message"
         } else {
             packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + alterNode.inetAddress + '\n' + alterNode.port + '\n' + System.currentTimeMillis().toString() + '\n' + message
         }

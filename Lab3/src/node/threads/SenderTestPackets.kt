@@ -23,12 +23,14 @@ class SenderTestPackets(
         var startTime = System.currentTimeMillis()
         while (true) {
             if (System.currentTimeMillis() - startTime > TIMEOUT_TO_SEND_TEST_PACKETS) {
-                for (child in childs) {
-                    val message = addInfoInPacket("Test", PacketType.TEST_PACKET)
-                    val packet = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
-                    packet.address = child.first.inetAddress
-                    packet.port = child.first.port
-                    datagramChannel.socket().send(packet)
+                if(childs.isNotEmpty()) {
+                    for (child in childs) {
+                        val message = addInfoInPacket("Test", PacketType.TEST_PACKET)
+                        val packet = DatagramPacket(message.toByteArray(Charsets.UTF_8), message.length)
+                        packet.address = child.first.inetAddress
+                        packet.port = child.first.port
+                        datagramChannel.socket().send(packet)
+                    }
                 }
                 if (parent != null) {
                     val message = addInfoInPacket("Test", PacketType.TEST_PACKET)
@@ -46,7 +48,7 @@ class SenderTestPackets(
         //Сначала будет следовать тип сообщения, затем его UUID, после ip и port отправителя, ip и port альтернативной ноды, а далее само сообщение
         val uuid = UUID.randomUUID()
         return if (alterNode == null) {
-            "$packetType\n$uuid\n$nodeIP\n$port\n0\n0\n$message"
+            "$packetType\n$uuid\n$nodeIP\n$port\n0\n0\n${System.currentTimeMillis()}\n$message"
         } else {
             packetType.toString() + '\n' + uuid.toString() + '\n' + nodeIP.toString() + '\n' + port + '\n' + alterNode.inetAddress + '\n' + alterNode.port + '\n' + System.currentTimeMillis().toString() + '\n' + message
         }

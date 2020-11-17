@@ -21,10 +21,20 @@
   <component name="ChangeListManager">
     <list default="true" id="ea1ce4c9-8c45-407a-a1a2-903897a91c8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/Receiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/Receiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/Restructer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/Restructer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/Sender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/SenderSavedMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/SenderSavedMessages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/utils/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/utils/Packet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/Node.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/Node.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/threads/Receiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Receiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/threads/Restructer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Restructer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/threads/Sender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Sender.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Packet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Packet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/threads/SenderSavedMessages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/SenderSavedMessages.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/threads/SenderTestPackets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/SenderTestPackets.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +67,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Kotlin.AppKt1">
+  <component name="RunManager" selected="Kotlin.AppKt3">
     <configuration name="AppKt1" type="JetRunConfigurationType" singleton="false" temporary="true">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
@@ -71,7 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppKt2" type="JetRunConfigurationType">
+    <configuration name="AppKt2" type="JetRunConfigurationType" singleton="false">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="Oleg 1001 0 Dima 1000" />
@@ -84,10 +94,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppKt3" type="JetRunConfigurationType">
+    <configuration name="AppKt3" type="JetRunConfigurationType" singleton="false">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Vanya 1002 0 Dima 1000" />
+      <option name="PROGRAM_PARAMETERS" value="Vanya 1002 0 Oleg 1001" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="AppKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppKt4" type="JetRunConfigurationType" singleton="false">
+      <module name="Lab3" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="Sasha 1003 0 Vanya 1002" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="AppKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppKt5" type="JetRunConfigurationType" singleton="false">
+      <module name="Lab3" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="Nastya 1004 0 Sasha 1003" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="AppKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppKt6" type="JetRunConfigurationType" singleton="false">
+      <module name="Lab3" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="Kirill 1005 0 Sasha 1003" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -100,6 +149,9 @@
     <list>
       <item itemvalue="Kotlin.AppKt2" />
       <item itemvalue="Kotlin.AppKt3" />
+      <item itemvalue="Kotlin.AppKt4" />
+      <item itemvalue="Kotlin.AppKt5" />
+      <item itemvalue="Kotlin.AppKt6" />
       <item itemvalue="Kotlin.AppKt1" />
     </list>
     <recent_temporary>
@@ -136,10 +188,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1605201462976" />
-    <state x="279" y="91" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605426763661">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="223" y="1" width="1089" height="833" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605557760063">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="72" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1605207057653" />
+    <state x="223" y="1" width="1089" height="833" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1605557760063" />
     <state x="279" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605426763661" />
     <state x="700" y="167" key="#com.intellij.ide.util.MemberChooser" timestamp="1605434700716">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -150,26 +202,26 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1605209046493" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1605428787450">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1605620972175">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605258968652" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605428787450" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1605428787449">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605620972175" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002462" />
+    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1605620972175">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605258968651" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605428787449" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1605428787449">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605620972175" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002461" />
+    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1605620972174">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605258968650" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605428787449" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1605428787449">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605620972174" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002461" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1605620972175">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605258968651" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605428787449" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605620972175" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002461" />
     <state width="1877" height="351" key="GridCell.Tab.1.bottom" timestamp="1605427469692">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
