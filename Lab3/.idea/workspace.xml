@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1ce4c9-8c45-407a-a1a2-903897a91c8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/Receiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/Receiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/Restructer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/Restructer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/Sender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/node/threads/SenderSavedMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/node/threads/SenderSavedMessages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/utils/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/utils/Packet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/utils/PacketType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/Node.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/Node.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/Receiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Receiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/Restructer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Restructer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/Sender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/Sender.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/SenderSavedMessages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/SenderSavedMessages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/threads/SenderTestPackets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/threads/SenderTestPackets.kt" afterDir="false" />
-    </list>
+    <list default="true" id="bdede9b9-8532-4a92-bec5-12de39a53f6c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,29 +15,20 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectId" id="1kCP9Tph0DmsVg8CYGR1L7ImwgB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1kQZXdX3Nahsrh31qWfWagypkQ9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChatTree" />
   </component>
   <component name="RunManager" selected="Kotlin.AppKt3">
     <configuration name="AppKt1" type="JetRunConfigurationType" singleton="false" temporary="true">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Dima 1000 0" />
+      <option name="PROGRAM_PARAMETERS" value="Dima 0 1000" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -84,7 +41,7 @@
     <configuration name="AppKt2" type="JetRunConfigurationType" singleton="false">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Oleg 1001 0 Dima 1000" />
+      <option name="PROGRAM_PARAMETERS" value="Oleg 0 1001 Dima 1000" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -97,7 +54,7 @@
     <configuration name="AppKt3" type="JetRunConfigurationType" singleton="false">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Vanya 1002 0 Oleg 1001" />
+      <option name="PROGRAM_PARAMETERS" value="Vanya 0 1002 Oleg 1001" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -110,7 +67,7 @@
     <configuration name="AppKt4" type="JetRunConfigurationType" singleton="false">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Sasha 1003 0 Vanya 1002" />
+      <option name="PROGRAM_PARAMETERS" value="Sasha 0 1003 Vanya 1002" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -123,20 +80,7 @@
     <configuration name="AppKt5" type="JetRunConfigurationType" singleton="false">
       <module name="Lab3" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Nastya 1004 0 Sasha 1003" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="AppKt" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppKt6" type="JetRunConfigurationType" singleton="false">
-      <module name="Lab3" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="Kirill 1005 0 Sasha 1003" />
+      <option name="PROGRAM_PARAMETERS" value="Nastya 0 1004 Vanya 1002" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -151,7 +95,6 @@
       <item itemvalue="Kotlin.AppKt3" />
       <item itemvalue="Kotlin.AppKt4" />
       <item itemvalue="Kotlin.AppKt5" />
-      <item itemvalue="Kotlin.AppKt6" />
       <item itemvalue="Kotlin.AppKt1" />
     </list>
     <recent_temporary>
@@ -163,122 +106,46 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ea1ce4c9-8c45-407a-a1a2-903897a91c8a" name="Default Changelist" comment="" />
-      <created>1605201453767</created>
+      <changelist id="bdede9b9-8532-4a92-bec5-12de39a53f6c" name="Default Changelist" comment="" />
+      <created>1605634819361</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605201453767</updated>
+      <updated>1605634819361</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="0" key="#Project_Structure" timestamp="1605201462976">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1605201462976" />
-    <state x="223" y="1" width="1089" height="833" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605557760063">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="223" y="1" width="1089" height="833" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1605557760063" />
-    <state x="279" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605426763661" />
-    <state x="700" y="167" key="#com.intellij.ide.util.MemberChooser" timestamp="1605434700716">
+    <state x="414" y="144" width="1092" height="906" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605646968636">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="560" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1605275416347" />
-    <state x="700" y="167" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605434700716" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1605209046493">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1605209046493" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1605620972175">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605620972175" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002462" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1605620972175">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605620972175" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002461" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1605620972174">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605620972174" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002461" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1605620972175">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605620972175" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605606002461" />
-    <state width="1877" height="351" key="GridCell.Tab.1.bottom" timestamp="1605427469692">
+    <state x="414" y="144" width="1092" height="906" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605646968636" />
+    <state x="751" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1605643261799">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605256493730" />
-    <state width="1877" height="351" key="GridCell.Tab.1.bottom/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605427469692" />
-    <state width="1877" height="351" key="GridCell.Tab.1.center" timestamp="1605427469692">
+    <state x="751" y="241" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605643261799" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1605634855118">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1605256493729" />
-    <state width="1877" height="351" key="GridCell.Tab.1.center/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605427469692" />
-    <state width="1877" height="351" key="GridCell.Tab.1.left" timestamp="1605427469692">
+    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605634855118" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1605671828167">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1605256493729" />
-    <state width="1877" height="351" key="GridCell.Tab.1.left/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605427469692" />
-    <state width="1877" height="351" key="GridCell.Tab.1.right" timestamp="1605427469692">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605671828167" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1605671828167">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1605256493729" />
-    <state width="1877" height="351" key="GridCell.Tab.1.right/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605427469692" />
-    <state x="315" y="153" width="905" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605211489589">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="315" y="153" width="905" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834@0.0.1536.834" timestamp="1605211489589" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1605434973621">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605671828167" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1605671828167">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605434973621" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="25" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>21</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>28</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>25</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/node/threads/Receiver.kt</url>
-          <line>24</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605671828167" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1605671828167">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605671828167" />
+    <state x="0" y="0" width="1665" height="1037" key="dock-window-1" timestamp="1605636390924">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="0" y="0" width="1665" height="1037" key="dock-window-1/1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1605636390924" />
   </component>
 </project>
