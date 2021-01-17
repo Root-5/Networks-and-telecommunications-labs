@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="lab4_mvn">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab4_mvn</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="~/lab4_mvn/src/kotlin/view/SnakeApp.kt" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="lab4_mvn.jar">
+        <element id="module-output" name="lab4_mvn" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="directory" name="res">
+          <element id="dir-copy" path="$PROJECT_DIR$/res" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane onKeyPressed="#onKeyPressed" prefHeight="683.0" prefWidth="987.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab4.snakes.controller.GameViewController">
+   <children>
+        <AnchorPane maxWidth="613.0" prefHeight="683.0" prefWidth="613.0" style="-fx-border-color: white black white white; -fx-min-width: 55%; -fx-max-width: 55%;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="374.0" AnchorPane.topAnchor="0.0">
+           <children>
+                 <GridPane fx:id="gameFieldGrid" layoutX="55.0" layoutY="54.0" prefHeight="292.0" prefWidth="285.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+           </children>
+        </AnchorPane>
+      <AnchorPane layoutX="631.0" maxWidth="371.0" minWidth="300.0" prefHeight="683.0" prefWidth="371.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane maxHeight="107.0" minHeight="107.0" prefHeight="107.0" prefWidth="371.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label fx:id="errorMsg" alignment="CENTER" layoutY="7.0" prefHeight="15.0" prefWidth="371.0" textFill="#e70000" />
+                  <Button fx:id="leaveGame" layoutX="111.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Leave game" />
+               </children>
+            </Pane>
+               <TableView fx:id="scoreTable" focusTraversable="false" prefHeight="438.0" prefWidth="371.0" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="Snake" />
+                   <TableColumn prefWidth="122.0" text="Player name" />
+                   <TableColumn prefWidth="76.0" text="Role" />
+                  <TableColumn prefWidth="127.0" sortType="DESCENDING" text="Score" />
+                 </columns>
+               </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

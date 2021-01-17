@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group 'dafaq'
+version '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_14
+    targetCompatibility = JavaVersion.VERSION_14
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    compile 'com.google.protobuf:protobuf-java:3.13.0'
+    compile 'org.projectlombok:lombok:1.18.16'
+    compile 'org.jetbrains:annotations:20.1.0'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor  'org.projectlombok:lombok:1.18.16'
+}
+
+tasks {
+    jar {
+        manifest {
+            attributes 'Main-Class': 'emris/snakes/Application'
+        }
+        from {
+            configurations.compileClasspath.collect {
+                it.isDirectory() ? it : zipTree(it)
+            }
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

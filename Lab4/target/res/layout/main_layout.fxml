@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+
+<AnchorPane maxHeight="408.0" maxWidth="600.0" minHeight="408.0" minWidth="600.0" prefHeight="408.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab4.snakes.controller.MainWindowController">
+    <fx:define>
+        <ContextMenu fx:id="contextMenu">
+            <items>
+                <MenuItem fx:id="connMenuItem" mnemonicParsing="false" text="Connect" />
+                <MenuItem fx:id="connSpectatorMenuItem" mnemonicParsing="false" text="Connect as spectator" />
+            </items>
+        </ContextMenu>
+    </fx:define>
+   <children>
+     <Label alignment="CENTER" layoutX="5.0" layoutY="6.0" prefHeight="25.0" prefWidth="600.0" text="Choose existing game to connect" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+     <TableView fx:id="gameTable" layoutX="50.0" layoutY="31.0" prefHeight="287.0" prefWidth="500.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="31.0">
+         <columns>
+            <TableColumn prefWidth="214.0" text="Host address" />
+            <TableColumn minWidth="0.0" prefWidth="94.0" text="Online" />
+            <TableColumn minWidth="0.0" prefWidth="120.0" text="Game tick" />
+            <TableColumn minWidth="0.0" prefWidth="63.0" text="Food" />
+         </columns>
+      </TableView>
+      <VBox alignment="TOP_CENTER" layoutY="327.0" maxHeight="80.0" minHeight="80.0" prefHeight="77.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+           <Button fx:id="newGameButton" text="Create new one..." />
+            <Label prefHeight="25.0" prefWidth="14.0" text="or" />
+            <Button fx:id="connectGameButton" prefHeight="25.0" prefWidth="134.0" text="Connect" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

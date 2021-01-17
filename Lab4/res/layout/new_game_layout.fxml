@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab4.snakes.controller.NewGameController">
+   <children>
+      <Label layoutX="190.0" layoutY="14.0" text="Параметры новой игры" />
+      <Label layoutX="59.0" layoutY="61.0" text="Ширина поля:" />
+      <TextField fx:id="width" layoutX="296.0" layoutY="56.0" text="" />
+      <Label layoutX="59.0" layoutY="92.0" text="Высота поля:" />
+      <TextField fx:id="height" layoutX="296.0" layoutY="87.0" text="" />
+      <Label layoutX="59.0" layoutY="124.0" text="Базовое количество еды:" />
+      <TextField fx:id="foodStatic" layoutX="296.0" layoutY="119.0" />
+      <Label layoutX="59.0" layoutY="157.0" text="Количество доп еды на игрока:" />
+      <TextField fx:id="foodPerPlayer" layoutX="296.0" layoutY="152.0" />
+      <Label layoutX="59.0" layoutY="193.0" text="Игровой тик (мс):" />
+      <TextField fx:id="stateDelayMs" layoutX="296.0" layoutY="188.0" />
+      <Label layoutX="59.0" layoutY="227.0" text="Вероятность дропа (%):" />
+      <TextField fx:id="deadFoodProb" layoutX="296.0" layoutY="222.0" />
+      <Label layoutX="59.0" layoutY="319.0" text="Порт для подключения:" />
+      <TextField fx:id="connectionPort" layoutX="296.0" layoutY="314.0" />
+      <Label layoutX="59.0" layoutY="258.0" text="Периодичность пингов (мс):" />
+      <TextField fx:id="pingDelayMs" layoutX="296.0" layoutY="253.0" />
+      <Label layoutX="59.0" layoutY="288.0" text="Таймаут отваливания (мс):" />
+      <TextField fx:id="nodeTimeoutMs" layoutX="296.0" layoutY="283.0" />
+      <Pane layoutX="162.0" layoutY="351.0" prefHeight="25.0" prefWidth="218.0">
+         <children>
+            <Button fx:id="createNewGame" text="Создать игру" />
+            <Button fx:id="backToMain" layoutX="162.0" text="Назад" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
